@@ -1,5 +1,6 @@
 .hero {
 	background-color: black;
+	height: 100vh;
 }
 
 header {
@@ -7,18 +8,10 @@ header {
     background-color: var(--clr-dark);
 }
 
-.container {
-    max-width: 1440px;
-    margin: auto;
-    height: 100%;
-    padding-left: 4rem;
-    padding-right: 4rem;
+.header__container {
+	display: flex;
+	align-items: center;
 }
 
 .logo {
-}
-
-.header__container {
-    display: flex;
-    align-items: center;
 }
