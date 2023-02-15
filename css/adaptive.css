@@ -1,0 +1,48 @@
+@media (max-width: 1024px) {
+    .hero {
+        position: relative;
+        height: auto;
+        min-height: 50rem;
+    }
+
+    .hero__col {
+        padding-top: clamp(2rem, calc(2rem + ((1vw - 0.32rem) * 5.6818)), 6rem);
+    }
+
+    .hero__phone-wrap {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero__container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero__img {
+        position: static;
+        width: 100%;
+        height: 30rem;
+    }
+
+    .hero__col {
+        padding-bottom: 4rem;
+    }
+
+    .hero__content {
+        width: 100%;
+    }
+
+    .hero__content-inner {
+        width: 100%;
+    }
+
+    .primary-btn {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .slider__nav {
+        display: none;
+    }
+}

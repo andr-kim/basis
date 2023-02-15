@@ -1,0 +1,17 @@
+.hero {
+	background-color: black;
+	height: 100vh;
+}
+
+header {
+    height: 10rem;
+    background-color: var(--clr-dark);
+}
+
+.header__container {
+	display: flex;
+	align-items: center;
+}
+
+.logo {
+}

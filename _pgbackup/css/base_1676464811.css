@@ -22,22 +22,10 @@
     --trp-white-5: rgba(255, 255, 255, 0.05);
 }
 
-body {
-    background: black;
-}
-
 .container {
-    max-width: 1440px;
-    margin: auto;
-    height: 100%;
-    padding-left: clamp(1.5rem, calc(1.5rem + ((1vw - 0.32rem) * 2.2321)), 4rem);
-    padding-right: clamp(1.5rem, calc(1.5rem + ((1vw - 0.32rem) * 2.2321)), 4rem);
+	max-width: 1440px;
+	margin: auto;
+	height: 100%;
+	padding-left: 4rem;
+	padding-right: 4rem;
 }
-
-h1 {
-    font-size: clamp(2.4rem, calc(2.4rem + ((1vw - 0.32rem) * 3.5714)), 6.4rem);
-    line-height: 105%;
-    font-weight: 500;
-    width: 16ch;
-}
-

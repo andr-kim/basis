@@ -1,17 +1,291 @@
-.hero {
-	background-color: black;
-	height: 100vh;
-}
-
+/* Navigation styles start here */
 header {
-    height: 10rem;
-    background-color: var(--clr-dark);
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: clamp(6rem, calc(6rem + ((1vw - 0.32rem) * 3.5714)), 10rem);
 }
 
 .header__container {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
+}
+
+.logo__img {
+    height: clamp(4rem, calc(4rem + ((1vw - 0.32rem) * 0.8929)), 5rem);
+}
+
+nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    transform: scale(1,0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+nav ul {
+    padding-left: clamp(1.5rem, calc(1.5rem + ((1vw - 0.32rem) * 2.2321)), 4rem);
+    padding-right: clamp(1.5rem, calc(1.5rem + ((1vw - 0.32rem) * 2.2321)), 4rem);
+}
+
+nav li {
+    list-style: none;
+    font-size: 2.4rem;
+    color: black;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+    transition: color 300ms ease-in-out;
+    font-size: clamp(1.8rem, calc(1.8rem + ((1vw - 0.32rem) * 0.1786)), 2rem);
+    margin-bottom: 1rem;
+}
+
+nav li:hover {
+    color: var(--clr-secondary);
+}
+
+#nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+    background: #2F2F2F;
+    border-radius: .8rem;
+}
+
+.nav-toggle-label span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2.8rem;
+    height: .2rem;
+    background: white;
+    border-radius: 1rem;
+    transition: 0.5s;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+    width: 2.8rem;
+    height: .2rem;
+    background: white;
+    transition: 0.5s;
+    border-radius: 1rem;
+}
+
+.nav-toggle-label span::before {
+    top: -1rem;
+}
+
+.nav-toggle-label span::after {
+    top: 1rem;
+}
+
+#nav-toggle:checked ~ .nav-toggle-label span {
+    background-color: transparent;
+}
+
+#nav-toggle:checked ~ .nav-toggle-label span::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+#nav-toggle:checked ~ .nav-toggle-label span::after {
+    top: 0;
+    transform: rotate(135deg);
+}
+
+#nav-toggle:checked ~ nav {
+    transform: scale(1,1);
+}
+
+#nav-toggle:checked ~ nav li {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+@media (min-width: 768px) {
+    .nav-toggle-label {
+        display: none;
+    }
+
+    .header__container {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+    }
+
+    nav {
+        all: unset;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: end;
+        gap: 2rem;
+        padding: 0;
+    }
+
+    nav li {
+        opacity: 1;
+        color: white;
+    }
+}
+
+/* Navigation styles end here */
+.hero {
+    background-color: black;
+    height: 100vh;
+}
+
+.hero__container {
+    padding-top: clamp(6rem, calc(6rem + ((1vw - 0.32rem) * 3.5714)), 10rem);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.hero__col {
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    padding-bottom: clamp(6rem, calc(6rem + ((1vw - 0.32rem) * 3.5714)), 10rem);
+}
+
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, calc(1rem + ((1vw - 0.32rem) * 2.6786)), 4rem);
+    align-items: flex-start;
+}
+
+.hero__content-inner {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, calc(2rem + ((1vw - 0.32rem) * 2.6786)), 4rem);
+}
+
+.price-wrap {
+    padding-left: 1rem;
+    border-left: 3px solid #b20000;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.price-wrap p {
+    font-size: clamp(2rem, calc(2rem + ((1vw - 0.32rem) * 2.8571)), 5.2rem);
+    font-weight: 500;
+    line-height: 100%;
+}
+
+.price-wrap span {
+    font-size: clamp(1.8rem, calc(1.8rem + ((1vw - 0.32rem) * 0.8929)), 2.8rem);
+    line-height: 120%;
+}
+
+.hero__img {
+    background-image: url('../img/img-1-min.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    min-width: 70vw;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 4rem;
+}
+
+.primary-btn {
+    font-size: clamp(1.4rem, calc(1.4rem + ((1vw - 0.32rem) * 0.3571)), 1.8rem);
+    padding: 1rem 1rem 1.2rem 2rem;
+    background-color: var(--clr-secondary);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.arrow-down {
+    bottom: 4rem;
+}
+
+.phone {
+    bottom: 0;
+    right: 0;
+    font-size: clamp(1.8rem, calc(1.8rem + ((1vw - 0.32rem) * 0.5357)), 2.4rem);
+    border-left: 3px solid #b20000;
+    padding-left: 10px;
+    line-height: 100%;
+}
+
+.hero__phone-wrap {
+    bottom: 4rem;
+    padding-right: clamp(1.5rem, calc(1.5rem + ((1vw - 0.32rem) * 2.2321)), 4rem);
+    max-width: 1440px;
+    padding-left: clamp(1.5rem, calc(1.5rem + ((1vw - 0.32rem) * 2.2321)), 4rem);
+    width: 100%;
+    margin: auto;
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.slider__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-end;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    justify-content: center;
+    padding-right: clamp(1.5rem, calc(1.5rem + ((1vw - 0.32rem) * 2.2321)), 4rem);
+    max-width: 1440px;
+    padding-left: clamp(1.5rem, calc(1.5rem + ((1vw - 0.32rem) * 2.2321)), 4rem);
+    width: 100%;
+    margin: auto;
+}
+
+.slider__nav-line {
+    width: 10rem;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-line {
+    width: 100%;
+    height: 0.2rem;
+    background-color: white;
+}
+
+.slider__nav-line--active {
+    width: 20rem;
 }
